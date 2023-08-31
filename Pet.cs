@@ -92,7 +92,7 @@ namespace ConsoleApp2
         public abstract void Eat();
         public abstract void Sleep();
         public abstract void Play();
-
+        public abstract string ToString();
 
 
     }
