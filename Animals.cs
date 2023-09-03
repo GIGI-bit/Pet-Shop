@@ -1,17 +1,19 @@
-﻿using System;
+using System;
 
 namespace ConsoleApp2
 {
-    internal class Cat:Pet
+    internal class Cat : Pet
     {
-        public Cat(string name,string gender,int age,int price)
-            :base(name,gender,age,price)
-        {}
+        public Cat(string name, string gender, int age, int price)
+            : base(name, gender, age, price)
+        { }
 
-        public override void  Eat()
+        public Cat() { }
+
+        public override void Eat()
         {
             MealQuantity++;
-            if(MealQuantity>=5)//pisikler 5 defe yedikden sonra buyuyurler
+            if (MealQuantity >= 5)//pisikler 5 defe yedikden sonra buyuyurler
             {
                 MealQuantity = 0;
                 Age += 1;
@@ -26,8 +28,8 @@ namespace ConsoleApp2
                 Console.WriteLine($"{Nickname} is tired. Feed your pet.");
                 return;
             }
-                
-                Energy--;
+
+            Energy--;
         }
 
         public override void Sleep()
@@ -35,13 +37,21 @@ namespace ConsoleApp2
             Energy++;
         }
 
+        public void Show()
+        {
+            Console.WriteLine($"Nickname: {Nickname}");
+            Console.WriteLine($"Age: {Age}");
+            Console.WriteLine($"Gender: {Gender}");
+
+        }
+
     }
 
-    internal class Dog:Pet
+    internal class Dog : Pet
     {
-        public Dog(string name,string gender,int age,int price)
-            :base(name,gender,age,price)
-        {}
+        public Dog(string name, string gender, int age, int price)
+            : base(name, gender, age, price)
+        { }
 
         public override void Eat()
         {
@@ -62,22 +72,28 @@ namespace ConsoleApp2
                 return;
             }
 
-            Energy-=2;
+            Energy -= 2;
         }
 
         public override void Sleep()
         {
             Energy++;
         }
+        public void Show()
+        {
+            Console.WriteLine($"Nickname: {Nickname}");
+            Console.WriteLine($"Age: {Age}");
+            Console.WriteLine($"Gender: {Gender}");
 
+        }
     }
 
-    internal class Fish:Pet
+    internal class Fish : Pet
     {
 
-        public Fish(string name,string gender,int age,int price):
-            base(name,gender,age,price)
-        {}
+        public Fish(string name, string gender, int age, int price) :
+            base(name, gender, age, price)
+        { }
 
         public override void Eat()
         {
@@ -105,15 +121,21 @@ namespace ConsoleApp2
         {
             Energy++;
         }
+        public void Show()
+        {
+            Console.WriteLine($"Nickname: {Nickname}");
+            Console.WriteLine($"Age: {Age}");
+            Console.WriteLine($"Gender: {Gender}");
 
+        }
 
     }
 
-    internal class Bird:Pet
+    internal class Bird : Pet
     {
         public Bird(string name, string gender, int age, int price) : base(name, gender, age, price)
         {
-            
+
         }
 
         public override void Eat()
@@ -141,7 +163,13 @@ namespace ConsoleApp2
         {
             Energy++;
         }
+        public void Show()
+        {
+            Console.WriteLine($"Nickname: {Nickname}");
+            Console.WriteLine($"Age: {Age}");
+            Console.WriteLine($"Gender: {Gender}");
 
+        }
     }
 
 }
