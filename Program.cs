@@ -1,12 +1,13 @@
-﻿using System;
+using ConsoleApp06;
+using System;
 using System.Diagnostics.Tracing;
 
 namespace ConsoleApp2
 {
     internal class Program
     {
-       
-     static int makeMenu(int _count, params string[] arr)
+
+        public static int makeMenu(int _count, params string[] arr)
         {
             int index = 0;
 
@@ -60,8 +61,30 @@ namespace ConsoleApp2
 
         static void Main()
         {
-            makeMenu(3, "one", "two", "three");
+            PetShop shop = new PetShop("name");
+            User user = new User();
+            Console.Write("Enter username: ");
+            user.Name = Console.ReadLine();
+            Console.Clear();
+            int index = makeMenu(3, "All Pets", "Buy", "My Pets", "Exit");
 
+            if (index == 0)
+            {
+                Console.Clear();
+                shop.AllPets();
+            }
+            else if (index == 1)
+            {
+                Console.Clear();
+                Console.Write("Enter id of the animal: ");
+                dynamic id=Console.ReadLine();
+                shop.Buy(id, user);
+            }
+            else if (index == 2)
+            {
+                Console.Clear();
+                user.ShowMyPets();
+            }
 
         }
     }
